@@ -278,7 +278,7 @@ const Achievements = () => {
             {/* ))} */}
           {/* </div> */}
         {/* </div> */}
-      {/* </section> */} */}
+      {/* </section> */}
 
     </div>
   );

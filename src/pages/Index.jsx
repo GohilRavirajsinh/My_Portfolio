@@ -46,7 +46,7 @@
    process them (optimize, hash filename, etc.)
    ------------------------------------------------------- */
 import heroBg      from "@/Assets/hero-bg.jpg";        /* Hero section background image */
-import profileAvatar from "@/Assets/profile-avatar.jpg"; /* Round profile photo */
+import profileAvatar from "@/Assets/profile-avatar3.jpg"; /* Round profile photo */
 
 /* -------------------------------------------------------
    ICON IMPORTS from lucide-react
@@ -54,6 +54,7 @@ import profileAvatar from "@/Assets/profile-avatar.jpg"; /* Round profile photo 
    Usage: <Github size={18} />
    ------------------------------------------------------- */
 import { Github, Linkedin, Twitter, Mail, ArrowRight, MapPin, Phone, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 /* -------------------------------------------------------
    SKILLS DATA
@@ -216,9 +217,9 @@ const Index = () => {
               {/* CTA (Call To Action) BUTTONS */}
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 {/* Primary button — links to contact page */}
-                <a href="/contact" className="btn-primary">
+                <Link to="/contact" className="btn-primary">
                   Hire Me <ArrowRight size={16} />
-                </a>
+                </Link>
                 {/* Outline button */}
                 <a href="https://github.com/GohilRavirajsinh?tab=repositories" className="btn-outline">
                   View Projects

@@ -41,6 +41,12 @@ import NotFound    from "./pages/NotFound.jsx";     // "*" — 404 page
    ------------------------------------------------------- */
 import Navbar from "./components/Navbar.jsx"; // Top navigation bar
 
+// GitHub Pages serves the app under /My_Portfolio/; Vite sets import.meta.env.BASE_URL
+const routerBasename =
+  import.meta.env.BASE_URL === "/"
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/, "");
+
 /* =====================================================
    ROOT APP COMPONENT
    
@@ -53,7 +59,7 @@ import Navbar from "./components/Navbar.jsx"; // Top navigation bar
    ===================================================== */
 const App = () => (
   /* BrowserRouter — enables SPA navigation across the whole app */
-  <BrowserRouter>
+  <BrowserRouter basename={routerBasename}>
 
     {/* -------------------------------------------------------
         NAVBAR — placed OUTSIDE <Routes> so it shows on EVERY page
