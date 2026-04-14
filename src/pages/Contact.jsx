@@ -84,21 +84,21 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 70969 336936",           /* 📝 TODO: Replace with your phone */
-    href: "tel:+917096933693",         /* tel: opens phone dialer on mobile */
+    value: "+91 70969 336936",
+    href: "tel:+917096933693",
     description: "Mon–Fri, 10am–6pm IST",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "Vallabh Vidhyanagar, Gujarat, India", /* 📝 TODO: Replace with your location */
+    value: "Vallabh Vidhyanagar, Gujarat, India",
     href: "#",
     description: "Available For Working",
   },
   {
     icon: Globe,
     label: "Portfolio",
-    value: "Ravirajsinh.dev",              /* 📝 TODO: Replace with your domain */
+    value: "Ravirajsinh.dev",            // domain
     href: "#",
     description: "Live website",
   },
@@ -331,7 +331,6 @@ const Contact = () => {
                     onChange={handleChange}
                   />
                 </div>
-
               </div>
 
               {/* Subject field */}

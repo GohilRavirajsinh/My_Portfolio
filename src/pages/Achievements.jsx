@@ -41,55 +41,55 @@
      → GET /api/stats        → return counts for stats bar
    ===================================================== */
 
-import { Trophy, Star, Zap, Users, Award, Target,} from "lucide-react";
+import { Trophy, Star, Zap, Users, Award, Target, } from "lucide-react";
 
 /* -------------------------------------------------------
    ACHIEVEMENTS DATA
    highlight: true → card gets gold left border + glow
    badge: "Gold" | "Silver" | other → different badge colors
-   
+
    📝 TODO: Replace ALL placeholder data with your real achievements
    ------------------------------------------------------- */
 const ACHIEVEMENTS = [
   {
     id: 1,
-    title:       "BGMI ESports Tournament",
-    category:    "Sigma Esports",
-    date:        "November 2024",
-    description: "Competed in data structures and algorithm challenges at the state level. Ranked in the top 10 out of 200+ participants.",
-    icon:        "🏆",
-    badge:       "Winner",
-    highlight:   true,
+    title: "BGMI ESports Tournament",
+    category: "Sigma Esports",
+    date: "November 2024",
+    description: "No 1 of Table Point in Tournament of Battlegrounds India Mobile! Very Big Achievement in Sep-2024. Vary Happy to Earn this Title in My Gaming Industry! ",
+    icon: "🏆",
+    badge: "Winner",
+    highlight: true,
   },
   {
     id: 2,
-    title:       "Chess Participating ",
-    category:    "Sports Compitition",
-    date:        "Sep 2023",
+    title: "Chess Participating ",
+    category: "Sports Compitition",
+    date: "Sep 2023",
     description: "Sardar Patel University 2023 Participating in a Sport Compitition in Chess",
-    icon:        "♚",
-    badge:       "3rd place",
-    highlight:   false,   /* Featured card — gets gold border + background glow */
+    icon: "♚",
+    badge: "3rd place",
+    highlight: false,   /* Featured card — gets gold border + background glow */
   },
   {
     id: 3,
-    title:       "Wrokshops",
-    category:    "Cyber Security India V V Nagar",
-    date:        "2022-2023",
+    title: "Wrokshops",
+    category: "Cyber Security India V V Nagar",
+    date: "2022-2023",
     description: "1.Cyber Awareness, 2.Digital Marketing, 3.Ethical Hacking & Cyber Security.",
-    icon:        "👥",
-    badge:       "Learning",
-    highlight:   false,
+    icon: "👥",
+    badge: "Learning",
+    highlight: false,
   },
   {
     id: 3,
-    title:       "Teaching & Guilding",
-    category:    "Online Guilding",
-    date:        "2024 to present",
+    title: "Teaching & Guilding",
+    category: "Online Guilding",
+    date: "2024 to present",
     description: "Teaching using my knowledges & Experiences to helps who don't know about Technologies, Career-line,...",
-    icon:        "🎖️",
-    badge:       "Helping",
-    highlight:   false,
+    icon: "🎖️",
+    badge: "Helping",
+    highlight: false,
   },
 ];
 
@@ -100,24 +100,24 @@ const ACHIEVEMENTS = [
    label → description below the number
    ------------------------------------------------------- */
 const IMPACT_STATS = [
-  { icon: Trophy, label: "Awards Won",        value: "6+"   },
-  { icon: Users,  label: "Students Mentored", value: "60+"  },
-  { icon: Star,   label: "GitHub Stars",      value: "120+" },
-  { icon: Zap,    label: "Hackathons",        value: "5+"   },
+  { icon: Trophy, label: "Awards Won", value: "6+" },
+  { icon: Users, label: "Students Mentored", value: "60+" },
+  { icon: Star, label: "GitHub Stars", value: "120+" },
+  { icon: Zap, label: "Hackathons", value: "5+" },
 ];
 
 /* -------------------------------------------------------
    HELPER FUNCTION: getBadgeStyle
-   
+
    Takes a badge string and returns an inline style object.
    This is a PURE FUNCTION — same input always gives same output.
-   
+
    HOW IT WORKS:
    switch (badge) checks the value:
    "Gold"   → gold styling
    "Silver" → grey styling
    default  → blue styling (for any other badge type)
-   
+
    Usage: style={getBadgeStyle(achievement.badge)}
    ------------------------------------------------------- */
 const getBadgeStyle = (badge) => {
@@ -125,21 +125,21 @@ const getBadgeStyle = (badge) => {
     case "Gold":
       return {
         background: "hsl(var(--primary) / 0.2)",        /* Transparent gold */
-        color:      "hsl(var(--primary))",               /* Gold text */
-        border:     "1px solid hsl(var(--primary) / 0.4)",
+        color: "hsl(var(--primary))",               /* Gold text */
+        border: "1px solid hsl(var(--primary) / 0.4)",
       };
     case "Silver":
       return {
         background: "hsl(210 15% 60% / 0.2)",
-        color:      "hsl(210 15% 70%)",                  /* Grey text */
-        border:     "1px solid hsl(210 15% 60% / 0.4)",
+        color: "hsl(210 15% 70%)",                  /* Grey text */
+        border: "1px solid hsl(210 15% 60% / 0.4)",
       };
     default:
       /* Any badge that isn't Gold or Silver gets blue styling */
       return {
         background: "hsl(220 80% 60% / 0.2)",
-        color:      "hsl(220 80% 70%)",                  /* Blue text */
-        border:     "1px solid hsl(220 80% 60% / 0.3)",
+        color: "hsl(220 80% 70%)",                  /* Blue text */
+        border: "1px solid hsl(220 80% 60% / 0.3)",
       };
   }
 };
@@ -258,26 +258,26 @@ const Achievements = () => {
           <div className="section-underline" />
 
           {/* Stats grid: 2 cols mobile, 4 cols desktop */}
-          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {IMPACT_STATS.map(({ icon: Icon, label, value }) => (
               <div key={label} className="portfolio-card p-6 text-center"> */}
-                {/* Gold icon circle */}
-                {/* <div
+      {/* Gold icon circle */}
+      {/* <div
                   className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
                   style={{ background: "hsl(var(--primary) / 0.15)" }}
                 >
                   <Icon size={24} className="text-primary" />
                 </div> */}
-                {/* Large gold number */}
-                {/* <div className="text-4xl font-bold text-gradient-gold mb-1">{value}</div> */}
-                {/* Label below the number */}
-                {/* <div className="text-muted-foreground text-sm">{label}</div> */}
-                {/* 📝 REACT TODO: Add count-up animation to the {value} above
+      {/* Large gold number */}
+      {/* <div className="text-4xl font-bold text-gradient-gold mb-1">{value}</div> */}
+      {/* Label below the number */}
+      {/* <div className="text-muted-foreground text-sm">{label}</div> */}
+      {/* 📝 REACT TODO: Add count-up animation to the {value} above
                     Use useState(0) + useEffect with setInterval to count up */}
-              {/* </div> */}
-            {/* ))} */}
-          {/* </div> */}
-        {/* </div> */}
+      {/* </div> */}
+      {/* ))} */}
+      {/* </div> */}
+      {/* </div> */}
       {/* </section> */}
 
     </div>
