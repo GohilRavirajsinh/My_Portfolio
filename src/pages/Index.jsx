@@ -1,86 +1,23 @@
-/* =====================================================
-   HOME / PROFILE PAGE — Index.jsx
-   Route: "/"
 
-   SECTIONS ON THIS PAGE:
-   1. Hero  — name, title, photo, CTA buttons, social links
-   2. Stats — 4 number cards (projects, tech, certs, repos)
-   3. About — bio text + skill progress bars
 
-   REACT CONCEPTS USED:
-   - Static data arrays (SKILLS, STATS, SOCIAL_LINKS)
-   - .map() to render lists from arrays
-   - Inline styles for dynamic values
 
-   📝 REACT TASKS (implement these as you learn):
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   1. Fetch profile data from Node.js API:
-      - import { useState, useEffect } from 'react'
-      - const [profile, setProfile] = useState(null)
-      - useEffect(() => {
-          fetch('/api/profile')
-            .then(res => res.json())
-            .then(data => setProfile(data))
-        }, [])   ← empty [] = run only once on mount
+import heroBg      from "@/Assets/hero-bg.jpg";        
+import profileAvatar from "@/Assets/profile-avatar3.jpg"; 
 
-   2. Animate skill bars on page load:
-      - const [animated, setAnimated] = useState(false)
-      - useEffect(() => { setAnimated(true) }, [])
-      - Change skill bar style to:
-        style={{ width: animated ? `${level}%` : "0%" }}
 
-   3. Add typing animation to subtitle:
-      - const [text, setText] = useState("")
-      - Use setInterval inside useEffect to type one char at a time
-      - clearInterval in the useEffect cleanup function
-
-   📝 NODE.JS TASKS (create these files in /server folder):
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   - Create server/routes/profile.js
-     → GET /api/profile → return JSON: { name, title, bio, location, skills[] }
-   ===================================================== */
-
-/* -------------------------------------------------------
-   ASSET IMPORTS
-   These images are imported at the top so Vite can
-   process them (optimize, hash filename, etc.)
-   ------------------------------------------------------- */
-import heroBg      from "@/Assets/hero-bg.jpg";        /* Hero section background image */
-import profileAvatar from "@/Assets/profile-avatar3.jpg"; /* Round profile photo */
-
-/* -------------------------------------------------------
-   ICON IMPORTS from lucide-react
-   Lucide is an icon library — each icon is a React component
-   Usage: <Github size={18} />
-   ------------------------------------------------------- */
 import { Github, Linkedin, Twitter, Mail, ArrowRight, MapPin, Phone, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
-/* -------------------------------------------------------
-   SKILLS DATA
-   Each object: { name: "skill name", level: percentage(0-100) }
-   
-   level is used to set the width of the skill bar fill.
-   Example: level: 90 → the bar fills 90% of the track.
-   
-   📝 TODO (React + Node.js): 
-   - Replace this hardcoded array with data fetched from API
-   - Create state: const [skills, setSkills] = useState([])
-   - Fetch from: GET /api/skills
-   ------------------------------------------------------- */
+
 const SKILLS = [
-  { name: "HTML5",   level: 80 }, /* 90% fill on the bar */
-  { name: "CSS & Tailwind  CSS",   level: 50 }, /* 90% fill on the bar */
+  { name: "HTML5",   level: 80 }, 
+  { name: "CSS & Tailwind  CSS",   level: 50 }, 
   { name: "JavaScript & Node.js",   level: 80 },
   { name: "React.js Continue....",     level: 40 },
   { name: "Git & GitHub", level: 70 },
 ];
 
-/* -------------------------------------------------------
-   STATS DATA
-   Shown as 4 cards below the hero section.
-   📝 TODO: Replace values with your real numbers
-   ------------------------------------------------------- */
+
 const STATS = [
   { label: "Projects Done",  value: "3+" },
   { label: "Technologies",   value: "8+"  },
@@ -88,15 +25,7 @@ const STATS = [
   { label: "GitHub Repos",   value: "11+" },
 ];
 
-/* -------------------------------------------------------
-   SOCIAL LINKS
-   icon  → Lucide icon component (used as <Icon size={18} />)
-   href  → URL to your profile
-   label → used for accessibility (aria-label)
-   
-   📝 TODO: Replace "#" with your actual social URLs
-   Example: href: "https://github.com/yourusername"
-   ------------------------------------------------------- */
+
 const SOCIAL_LINKS = [
   { icon: Github,   href: "https://github.com/GohilRavirajsinh", label: "GitHub"   },
   { icon: Linkedin, href: "https://www.linkedin.com/in/ravirajsinh-gohil-90b29b336", label: "LinkedIn" },
@@ -104,47 +33,25 @@ const SOCIAL_LINKS = [
   { icon: Mail,     href: "mailto:ravi.empowergrowth@gmail.com", label: "Email"    },
 ];
 
-/* =====================================================
-   MAIN COMPONENT
-   
-   This is the default export — React Router renders this
-   when the user visits "/"
-   ===================================================== */
+
 const Index = () => {
-  /* -------------------------------------------------------
-     📝 REACT TODO: Add state variables here:
-     
-     import { useState, useEffect } from 'react'
-     
-     const [animated, setAnimated] = useState(false)
-     → Used to trigger skill bar animation on page load
-     
-     useEffect(() => {
-       setAnimated(true) ← runs after component appears on screen
-     }, [])
-     ------------------------------------------------------- */
+  
 
   return (
-    /* page-enter → CSS animation class from index.css (fadeInUp keyframe) */
+    
     <div className="page-enter">
 
-      {/* ===================================================
-          SECTION 1: HERO
-          Full-screen section with background image + overlay
-          ================================================== */}
+      {}
       <section
         className="relative min-h-screen flex items-center overflow-hidden"
         style={{
-          /* Inline style for background image (imported at top) */
+          
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        {/* -------------------------------------------------------
-            DARK OVERLAY — sits on top of the background image
-            opacity via the rgba color: hsl(.../ 0.95) = 95% opaque
-            ------------------------------------------------------- */}
+        {}
         <div
           className="absolute inset-0"
           style={{
@@ -152,33 +59,29 @@ const Index = () => {
           }}
         />
 
-        {/* Decorative glow blobs — absolute positioned, behind content */}
+        {}
         <div className="glow-orb glow-orb-gold w-96 h-96 -top-20 -right-20" />
         <div className="glow-orb glow-orb-blue w-80 h-80 bottom-10 left-10" />
 
-        {/* -------------------------------------------------------
-            HERO CONTENT
-            relative z-10 → sits ABOVE the overlay (z-index: 10)
-            section-container → max-width + centered (from index.css)
-            ------------------------------------------------------- */}
+        {}
         <div className="relative z-10 section-container w-full">
-          {/* Two-column layout: text LEFT, image RIGHT */}
+          {}
           <div className="flex flex-col lg:flex-row items-center gap-16">
 
-            {/* LEFT COLUMN: text content */}
+            {}
             <div className="flex-1 text-center lg:text-left">
 
-              {/* "Available for hire" badge — small pill */}
+              {}
               <div
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
                 style={{ background: "hsl(var(--primary) / 0.1)", border: "1px solid hsl(var(--primary) / 0.3)" }}
               >
-                {/* animate-pulse → Tailwind class that pulses opacity */}
+                {}
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-sm text-primary font-medium">Available for hire</span>
               </div>
 
-              {/* Main name — large heading */}
+              {}
               <h1 className="text-5xl md:text-display font-bold text-foreground mb-4 leading-tight">
                 Hi, I'm{" "}
                 {/* 📝 TODO: Replace "Your Name" with your actual name */}
@@ -336,32 +239,22 @@ const Index = () => {
             </p>
           </div>
 
-          {/* RIGHT: Skill progress bars */}
+          {}
           <div className="space-y-5">
-            {/*
-              HOW SKILL BARS WORK:
-              .skill-bar-track = grey background bar (full width)
-              .skill-bar-fill  = gold bar inside (width = level%)
-              
-              📝 REACT TODO: Animate bars on page load:
-              1. Add: const [animated, setAnimated] = useState(false)
-              2. Add: useEffect(() => { setAnimated(true) }, [])
-              3. Change: style={{ width: animated ? `${level}%` : "0%" }}
-              This starts bars at 0% and animates to actual % on load
-            */}
+            {}
             {SKILLS.map(({ name, level }) => (
               <div key={name}>
-                {/* Label row — skill name on left, percentage on right */}
+                {}
                 <div className="flex justify-between mb-2">
                   <span className="text-sm font-medium text-foreground">{name}</span>
                   <span className="text-sm text-primary font-semibold">{level}%</span>
                 </div>
-                {/* Grey track */}
+                {}
                 <div className="skill-bar-track">
-                  {/* Gold fill — width is set as inline style */}
+                  {}
                   <div
                     className="skill-bar-fill"
-                    style={{ width: `${level}%` }} /* Dynamic width from data */
+                    style={{ width: `${level}%` }} 
                   />
                 </div>
               </div>

@@ -1,112 +1,40 @@
-/* =====================================================
-   CONTACT PAGE — Contact.jsx
-   Route: "/contact"
 
-   SECTIONS ON THIS PAGE:
-   1. Page header banner
-   2. Two-column layout:
-      LEFT  → Contact info cards + social links
-      RIGHT → Contact form
-
-   REACT CONCEPTS USED:
-   - Static data arrays (CONTACT_INFO, SOCIAL_LINKS)
-   - Comment placeholders for future useState + form logic
-
-   📝 REACT TASKS (implement these as you learn):
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Step 1 — Add form state using useState:
-     import { useState } from 'react'
-     const [formData, setFormData] = useState({
-       name: '', email: '', subject: '', message: ''
-     })
-     const [isLoading, setIsLoading] = useState(false)   ← true while sending
-     const [submitted, setSubmitted] = useState(false)   ← true after success
-
-   Step 2 — Handle input changes:
-     const handleChange = (e) => {
-       setFormData({ ...formData, [e.target.name]: e.target.value })
-       // [e.target.name] = computed property: "name", "email", etc.
-       // ...formData = spread: copies all existing values first
-     }
-
-   Step 3 — Handle form submit:
-     const handleSubmit = async (e) => {
-       e.preventDefault()              ← stops page from reloading
-       setIsLoading(true)
-       const res = await fetch('/api/contact', {
-         method: 'POST',
-         headers: { 'Content-Type': 'application/json' },
-         body: JSON.stringify(formData)
-       })
-       const data = await res.json()
-       setIsLoading(false)
-       if (data.success) setSubmitted(true)
-     }
-
-   Step 4 — Add to JSX:
-     <form onSubmit={handleSubmit}>
-     <input value={formData.name} onChange={handleChange} />
-     <button disabled={isLoading}>{isLoading ? 'Sending...' : 'Send'}</button>
-
-   Step 5 — Validate before submit:
-     if (!formData.name || !formData.email) { alert('Fill required fields') return }
-     Check email format: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
-
-   📝 NODE.JS TASKS:
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   - Create server/routes/contact.js
-     → POST /api/contact
-       Body: { name, email, subject, message }
-       1. Validate all fields are not empty
-       2. Use nodemailer to send email to yourself
-       3. Save to MongoDB (optional for record keeping)
-       4. Return: res.json({ success: true, message: 'Email sent!' })
-   - npm install nodemailer
-   - Add to .env: EMAIL_USER=your@gmail.com, EMAIL_PASS=yourpassword
-   - Create server/services/emailService.js with a sendEmail(to, subject, body) function
-   ===================================================== */
 
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, Clock, Globe, Instagram } from "lucide-react";
 
-/* -------------------------------------------------------
-   CONTACT INFO DATA
-   📝 TODO: Replace ALL placeholder values with your real info
-   ------------------------------------------------------- */
+
 const CONTACT_INFO = [
   {
     icon:        Mail,
     label:       "Email",
-    value:       "ravi.empowergrowth@gmail.com",        /* 📝 TODO: Replace with your email */
-    href:        "mailto:ravi.empowergrowth@email.com", /* mailto: opens the user's email app */
+    value:       "ravi.empowergrowth@gmail.com",        
+    href:        "mailto:ravi.empowergrowth@email.com", 
     description: "Best way to reach me",
   },
   {
     icon:        Phone,
     label:       "Phone",
-    value:       "+91 70969 336936",           /* 📝 TODO: Replace with your phone */
-    href:        "tel:+917096933693",         /* tel: opens phone dialer on mobile */
+    value:       "+91 70969 336936",           
+    href:        "tel:+917096933693",         
     description: "Mon–Fri, 10am–6pm IST",
   },
   {
     icon:        MapPin,
     label:       "Location",
-    value:       "Vallabh Vidhyanagar, Gujarat, India", /* 📝 TODO: Replace with your location */
+    value:       "Vallabh Vidhyanagar, Gujarat, India", 
     href:        "#",
     description: "Available For Working",
   },
   {
     icon:        Globe,
     label:       "Portfolio",
-    value:       "Ravirajsinh.dev",              /* 📝 TODO: Replace with your domain */
+    value:       "Ravirajsinh.dev",              
     href:        "#",
     description: "Live website",
   },
 ];
 
-/* -------------------------------------------------------
-   SOCIAL LINKS
-   📝 TODO: Replace "#" with your real profile URLs
-   ------------------------------------------------------- */
+
 const SOCIAL_LINKS = [
   { icon: Github,   href: "https://github.com/GohilRavirajsinh", label: "GitHub",   color: "hsl(210 15% 70%)"  },
   { icon: Linkedin, href: "https://www.linkedin.com/in/ravirajsinh-gohil-90b29b336", label: "LinkedIn",  color: "hsl(210 80% 60%)"  },
@@ -114,33 +42,14 @@ const SOCIAL_LINKS = [
   { icon: Mail,     href: "mailto:ravi.empowergrowth@email.com", label: "Email",     color: "hsl(var(--primary))" },
 ];
 
-/* =====================================================
-   MAIN COMPONENT
-   ===================================================== */
+
 const Contact = () => {
-  /* -------------------------------------------------------
-     📝 REACT TODO — Add these state variables here:
-     
-     import { useState } from 'react'
-     
-     const [formData, setFormData] = useState({
-       name: '', email: '', subject: '', message: ''
-     })
-     const [isLoading, setIsLoading] = useState(false)
-     const [submitted, setSubmitted] = useState(false)
-     const [error, setError] = useState('')
-     
-     Then create:
-     const handleChange = (e) => { ... }
-     const handleSubmit = async (e) => { ... }
-     ------------------------------------------------------- */
+  
 
   return (
     <div className="page-enter">
 
-      {/* ===================================================
-          PAGE HEADER
-          ================================================== */}
+      {}
       <div
         className="py-24 text-center relative overflow-hidden"
         style={{ background: "hsl(var(--surface))", borderBottom: "1px solid hsl(var(--border))" }}
@@ -161,17 +70,12 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* ===================================================
-          MAIN SECTION — Two Column Layout
-          Left: info cards | Right: form
-          ================================================== */}
+      {}
       <section className="section-container">
-        {/* lg:grid-cols-2 → two equal columns on large screens */}
+        {}
         <div className="grid lg:grid-cols-2 gap-12">
 
-          {/* -----------------------------------------------
-              LEFT COLUMN — Contact Info + Social Links
-              ----------------------------------------------- */}
+          {}
           <div className="space-y-6">
 
             <div>
@@ -347,20 +251,7 @@ const Contact = () => {
                 * Required fields. I'll reply within 24 hours.
               </p>
 
-              {/* -----------------------------------------------
-                  📝 REACT TODO: Add success/error messages here:
-                  
-                  {submitted && (
-                    <p className="text-green-400 text-center text-sm">
-                      ✅ Message sent! I'll reply soon.
-                    </p>
-                  )}
-                  {error && (
-                    <p className="text-red-400 text-center text-sm">
-                      ❌ {error}
-                    </p>
-                  )}
-                  ----------------------------------------------- */}
+              {}
 
             </form>
           </div>

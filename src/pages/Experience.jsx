@@ -1,51 +1,8 @@
-/* =====================================================
-   EXPERIENCE PAGE — Experience.jsx
-   Route: "/experience"
 
-   SECTIONS ON THIS PAGE:
-   1. Page header banner
-   2. Work experience timeline
-   3. Featured projects grid
-
-   REACT CONCEPTS USED:
-   - Static data arrays (EXPERIENCES, PROJECTS)
-   - .map() to render lists
-   - Conditional styles with ternary operator (? :)
-
-   📝 REACT TASKS (implement these as you learn):
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   1. Fetch experience from API:
-      import { useState, useEffect } from 'react'
-      const [experiences, setExperiences] = useState([])
-      useEffect(() => {
-        fetch('/api/experience')
-          .then(res => res.json())
-          .then(data => setExperiences(data))
-      }, [])
-
-   2. "Show More / Less" toggle for long descriptions:
-      const [expanded, setExpanded] = useState(null)  ← stores ID of expanded card
-      Then: onClick={() => setExpanded(expanded === exp.id ? null : exp.id)}
-      Render full text if expanded === exp.id, else truncate
-
-   3. Filter by type (Full-time / Intern / Freelance):
-      const [filter, setFilter] = useState('All')
-      const filtered = EXPERIENCES.filter(e => filter === 'All' || e.type === filter)
-      Add filter buttons that call setFilter(type)
-
-   📝 NODE.JS TASKS:
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   - Create server/routes/experience.js
-     → GET /api/experience → return JSON array of work experience
-     → GET /api/projects   → return JSON array of projects
-   ===================================================== */
 
 import { Briefcase, Code2, Calendar, MapPin, Github, Globe } from "lucide-react";
 
-/* -------------------------------------------------------
-   EXPERIENCE DATA
-   📝 TODO: Replace ALL placeholder data with your real experience
-   ------------------------------------------------------- */
+
 const EXPERIENCES = [
   {
     id: 1,
@@ -66,7 +23,7 @@ const EXPERIENCES = [
   {
     id: 2,
     role:        "Php Laravel Intern",
-    company:     "B M Coder",     /* 📝 TODO: Replace */
+    company:     "B M Coder",     
     type:        "Internship",
     location:    "Remote",
     period:      "June 2025 – April 2025",
@@ -96,10 +53,7 @@ const EXPERIENCES = [
   },
 ];
 
-/* -------------------------------------------------------
-   PROJECTS DATA
-   📝 TODO: Replace with your real projects
-   ------------------------------------------------------- */
+
 const PROJECTS = [
   {
     id: 1,
@@ -115,8 +69,8 @@ const PROJECTS = [
     name:        "Musical System",
     description: "Full-stack Music Listening app with React frontend, Node.js backend, and MongoDB database. Features: Songs Listing, Playlists, Whislists, and Admin Panel.",
     tech:        ["React.js-Vite", "Node.js", "MongoDB/Postgre SQL", "Tailwind CSS"],
-    github:      "#",   /* 📝 TODO: Add your GitHub repo URL */
-    live:        "#",   /* 📝 TODO: Add live demo URL */
+    github:      "#",   
+    live:        "#",   
     status:      "Pending",
   },
   
@@ -140,16 +94,12 @@ const PROJECTS = [
   },
 ];
 
-/* =====================================================
-   MAIN COMPONENT
-   ===================================================== */
+
 const Experience = () => {
   return (
     <div className="page-enter">
 
-      {/* ===================================================
-          PAGE HEADER BANNER
-          ================================================== */}
+      {}
       <div
         className="py-24 text-center relative overflow-hidden"
         style={{ background: "hsl(var(--surface))", borderBottom: "1px solid hsl(var(--border))" }}
