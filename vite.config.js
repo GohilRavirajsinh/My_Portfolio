@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* =====================================================
    VITE CONFIG — vite.config.js
    
@@ -18,6 +19,9 @@
    - "@" maps to the "src" folder
    - So instead of "../../components/Navbar" you write "@/components/Navbar"
    ===================================================== */
+=======
+
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
 
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
@@ -27,7 +31,11 @@ import path from "path";
 import { copyFileSync } from "fs";
 import { componentTagger } from "lovable-tagger";
 
+<<<<<<< HEAD
 /** GitHub Pages serves 404.html for unknown paths; copy SPA shell so /contact etc. refreshes work. */
+=======
+
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
 function ghPagesSpa404() {
   return {
     name: "gh-pages-spa-404",
@@ -40,7 +48,11 @@ function ghPagesSpa404() {
 }
 
 export default defineConfig(({ mode }) => ({
+<<<<<<< HEAD
   // GitHub Pages project site (production only); dev keeps "/" for simpler local URLs
+=======
+  
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
   base: mode === "production" ? "/My_Portfolio/" : "/",
   server: {
     host: "::",

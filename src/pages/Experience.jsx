@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Briefcase, Code2, Calendar, MapPin, Github, Globe } from "lucide-react";
 
 const EXPERIENCES = [
@@ -35,6 +36,37 @@ const EXPERIENCES = [
     type: "Hybrid",
     location: "Ahmedabad, Gujarat, India",
     period: "Jan 2025 – April 2025",
+=======
+
+
+import { Briefcase, Code2, Calendar, MapPin, Github, Globe } from "lucide-react";
+
+
+const EXPERIENCES = [
+  {
+    id: 1,
+    role:        "Freelance Web Developer",
+    company:     "Self-Employed",
+    type:        "Freelancer",
+    location:    "Remote",
+    period:      "Jan 2026 – Present",
+    description: "Learning Node.js and React.js From Scratch with Creating a Small Projects for Clients and Learning Purpose.",
+    responsibilities: [
+      "Clients projects — portfolio site",
+      "Used HTML, CSS, Node.js and later React for development",
+      "Deployed projects using Cursor and AntiGravity",
+      "Learning Github Push-Pull-Commit Projects",
+    ],
+    tech: ["HTML5", "Tailwind CSS", "Node JS", "React.JS", "Cursor", "AntiGravity", "Github"],
+  },
+  {
+    id: 2,
+    role:        "Php Laravel Intern",
+    company:     "B M Coder",     
+    type:        "Internship",
+    location:    "Remote",
+    period:      "June 2025 – April 2025",
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
     description: "Worked on the Project of Ecommerse site named of `Goku's Store`. Its an Ecommerce site to customer/user can see Items and buy it using Affiliate Links! ",
     responsibilities: [
       "Built responsible website using Php Laravel from scratch.",
@@ -42,6 +74,7 @@ const EXPERIENCES = [
       "Learning about XAMPP & UWAMP database",
       "Affiliate links that clicking to direct official site & earn commision",
     ],
+<<<<<<< HEAD
     tech: ["Prompt AI", "Php", "Laravel", "XAMPP", "UWAMP", "HTML5", "CSS"],
   },
   {
@@ -51,6 +84,17 @@ const EXPERIENCES = [
     type: "Remote",
     location: "Sardar Patel University Department",
     period: "2024 ",
+=======
+    tech: ["Prompt AI", "Php", "Laravel", "XAMPP", "UWAMP"],
+  },
+  {
+    id: 3,
+    role:        "ASP.NET Design & Database",
+    company:     "MCA Sem-3 Project",
+    type:        "Designer",
+    location:    "Remote",
+    period:      "2024 – Present",
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
     description: "Create Designing of The Name Of Project `Car Selling System` Using SqlServer Database!",
     responsibilities: [
       "Sliding Cars Logo To Choosing Car Page",
@@ -61,6 +105,7 @@ const EXPERIENCES = [
   },
 ];
 
+<<<<<<< HEAD
 const PROJECTS = [
   {
     id: 1,
@@ -119,10 +164,58 @@ const PROJECTS = [
   },
 ];
 
+=======
+
+const PROJECTS = [
+  {
+    id: 1,
+    name:        "Portfolio Website",
+    description: "This portfolio site — built with React.js, Tailwind CSS, and React Router. Designed as a learning project for React and later Node.js integration.",
+    tech:        ["React.js-Vite", "Tailwind CSS", "Node.js", "Cursor"],
+    github:      "#",
+    live:        "#",
+    status:      "In Progress",
+  },
+  {
+    id: 2,
+    name:        "Musical System",
+    description: "Full-stack Music Listening app with React frontend, Node.js backend, and MongoDB database. Features: Songs Listing, Playlists, Whislists, and Admin Panel.",
+    tech:        ["React.js-Vite", "Node.js", "MongoDB/Postgre SQL", "Tailwind CSS"],
+    github:      "#",   
+    live:        "#",   
+    status:      "Pending",
+  },
+  
+  {
+    id: 3,
+    name:        "Affiliate Site",
+    description: "A Site to Buy Items. When user cliick buy button than the link is Affiliate to Open Official Site to by Item! & Earn Commision",
+    tech:        ["Javascript", "CSS", "HTML5", "Php", "Laravel", "VS Code"],
+    github:      "#",
+    live:        "#",
+    status:      "Completed",
+  },
+  {
+    id: 4,
+    name:        "Car Selling System",
+    description: "ASP.NET Simple Application to Selling Car of Customer. Home, Cars, About, Contact Pages. Customer can buy car like Ecommerce Site",
+    tech:        ["HTML5-CSS", "Prompt AI", "ASP.Net", "Microsoft Sql Server"],
+    github:      "#",
+    live:        "#",
+    status:      "Completed",
+  },
+];
+
+
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
 const Experience = () => {
   return (
     <div className="page-enter">
 
+<<<<<<< HEAD
+=======
+      {}
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
       <div
         className="py-24 text-center relative overflow-hidden"
         style={{ background: "hsl(var(--surface))", borderBottom: "1px solid hsl(var(--border))" }}
@@ -143,19 +236,34 @@ const Experience = () => {
         </div>
       </div>
 
+<<<<<<< HEAD
+=======
+      {/* ===================================================
+          SECTION 1: WORK EXPERIENCE TIMELINE
+          Same timeline pattern as Education page
+          ================================================== */}
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
       <section className="section-container">
         <h2 className="text-2xl font-bold text-foreground mb-8">Work History</h2>
 
         {/* Timeline wrapper */}
         <div className="relative pl-8">
+<<<<<<< HEAD
           <div className="timeline-line" />
+=======
+          <div className="timeline-line" />   {/* Vertical gold line (from index.css) */}
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
 
           <div className="space-y-10">
             {EXPERIENCES.map((exp, index) => (
               <div
                 key={exp.id}
                 className="relative flex gap-6 page-enter"
+<<<<<<< HEAD
                 style={{ animationDelay: `${index * 0.15}s` }}
+=======
+                style={{ animationDelay: `${index * 0.15}s` }}  /* Stagger each card */
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
               >
                 {/* Gold dot on the timeline line */}
                 <div className="timeline-dot absolute -left-[5px]" style={{ top: "0.5rem" }} />
@@ -170,12 +278,20 @@ const Experience = () => {
                       <div className="flex items-center gap-2 mt-1">
                         {/* Company name in gold */}
                         <span className="text-primary font-semibold text-sm">{exp.company}</span>
+<<<<<<< HEAD
+=======
+                        {/* Type badge (Internship / Freelance / Volunteer) */}
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                         <span className="gold-tag">{exp.type}</span>
                       </div>
                     </div>
                     {/* Date range pill */}
                     <div
+<<<<<<< HEAD
                       className="flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium text-primary shrink-0"
+=======
+                      className="flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium text-primary flex-shrink-0"
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                       style={{ background: "hsl(var(--primary) / 0.1)", border: "1px solid hsl(var(--primary) / 0.2)" }}
                     >
                       <Calendar size={12} />
@@ -198,7 +314,12 @@ const Experience = () => {
                   <ul className="space-y-1 mb-4">
                     {exp.responsibilities.map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+<<<<<<< HEAD
                         <span className="text-primary mt-1 shrink-0">▸</span>
+=======
+                        {/* Gold arrow bullet */}
+                        <span className="text-primary mt-1 flex-shrink-0">▸</span>
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                         {item}
                       </li>
                     ))}
@@ -218,6 +339,12 @@ const Experience = () => {
         </div>
       </section>
 
+<<<<<<< HEAD
+=======
+      {/* ===================================================
+          SECTION 2: PROJECTS GRID
+          ================================================== */}
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
       <section
         className="py-16"
         style={{ background: "hsl(var(--surface))", borderTop: "1px solid hsl(var(--border))" }}
@@ -225,7 +352,11 @@ const Experience = () => {
         <div className="section-container py-0">
           <div className="flex items-center gap-3 mb-2">
             <Code2 size={24} className="text-primary" />
+<<<<<<< HEAD
             <h2 className="text-2xl font-bold text-foreground">Projects</h2>
+=======
+            <h2 className="text-2xl font-bold text-foreground">Featured Projects</h2>
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
           </div>
           <div className="section-underline" />
 
@@ -237,6 +368,7 @@ const Experience = () => {
                 className="portfolio-card p-6 page-enter"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+<<<<<<< HEAD
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="font-bold text-foreground text-lg">{project.name}</h3>
                   <span
@@ -248,6 +380,23 @@ const Experience = () => {
                       color: project.status === "Completed"
                         ? "hsl(var(--primary))"
                         : "hsl(220 80% 70%)",
+=======
+                {/* Project header: name + status badge */}
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="font-bold text-foreground text-lg">{project.name}</h3>
+
+                  {/* Status badge — gold for Completed, blue for In Progress */}
+                  <span
+                    className="text-xs px-2 py-1 rounded-full flex-shrink-0 ml-2"
+                    style={{
+                      /* Ternary operator: condition ? valueIfTrue : valueIfFalse */
+                      background: project.status === "Completed"
+                        ? "hsl(var(--primary) / 0.15)"     /* Gold background */
+                        : "hsl(220 80% 60% / 0.15)",        /* Blue background */
+                      color: project.status === "Completed"
+                        ? "hsl(var(--primary))"             /* Gold text */
+                        : "hsl(220 80% 70%)",               /* Blue text */
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                       border: `1px solid ${project.status === "Completed"
                         ? "hsl(var(--primary) / 0.3)"
                         : "hsl(220 80% 60% / 0.3)"}`
@@ -263,12 +412,17 @@ const Experience = () => {
                 </p>
 
                 {/* Tech tags */}
+<<<<<<< HEAD
                 <div className="flex flex-wrap gap-2 mb-6">
+=======
+                <div className="flex flex-wrap gap-2 mb-5">
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                   {project.tech.map((t) => (
                     <span key={t} className="gold-tag">{t}</span>
                   ))}
                 </div>
 
+<<<<<<< HEAD
                 {/* Project Links */}
                 <div className="flex items-center gap-4 pt-4 border-t border-white/5">
                   {project.github !== "#" && (
@@ -298,6 +452,24 @@ const Experience = () => {
                     </a>
                   )}
                 </div>
+=======
+                {/* GitHub + Live Demo links */}
+                {/*<div className="flex items-center gap-4 pt-4 border-t border-border">
+                  <a
+                    href={project.github}
+                    className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Github size={15} /> GitHub
+                  </a>
+                  <a
+                    href={project.live}
+                    className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Globe size={15} /> Live Demo
+                  </a>
+                </div>*/}
+
+>>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
               </div>
             ))}
           </div>
