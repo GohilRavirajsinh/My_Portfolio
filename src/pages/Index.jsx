@@ -5,10 +5,11 @@ import { Github, Linkedin, Twitter, Mail, ArrowRight, MapPin, Phone, Instagram }
 import { Link } from "react-router-dom";
 
 const SKILLS = [
+  { name: "AI Creativity & Designing", level: 100 },
   { name: "HTML5", level: 80 },
-  { name: "CSS & Tailwind  CSS", level: 50 },
-  { name: "JavaScript & Node.js", level: 80 },
-  { name: "React.js Continue....", level: 40 },
+  { name: "CSS", level: 80 },
+  { name: "Node.js", level: 70 },
+  { name: "React.js ", level: 60 },
   { name: "Git & GitHub", level: 70 },
 ];
 
@@ -72,7 +73,7 @@ const Index = () => {
 
               <h2 className="text-xl md:text-2xl text-muted-foreground mb-4 font-medium">
                 Web Developer &amp;{" "}
-                <span className="text-primary">Quick Lerner</span>
+                <span className="text-primary">AI Designer</span>
               </h2>
 
               {/* Location + Phone info row */}
@@ -90,7 +91,7 @@ const Index = () => {
               <p className="text-muted-foreground text-lg mb-8 max-w-xl leading-relaxed">
                 Passionate developer building modern web experiences. I love turning ideas
                 into reality with clean code and thoughtful design. Currently learning
-                React.js and Node.js through Video Tutorials & AI.
+                React.js and Node.js & Using AI Photo/Logo & Designing!
               </p>
 
               {/* CTA (Call To Action) BUTTONS */}

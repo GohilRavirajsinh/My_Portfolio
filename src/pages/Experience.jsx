@@ -8,14 +8,14 @@ const EXPERIENCES = [
     type: "Freelancer",
     location: "Vallabh Vidhyanagar, Gujarat, India",
     period: "Jan 2026 – Present",
-    description: "Learning Node.js and React.js From Scratch with Creating a Small Projects for Clients and Learning Purpose.",
+    description: "Learning Node.js and React.js From Scratch with Creating a Projects for Clients Services.",
     responsibilities: [
-      "Started Learning Node.js and React.js",
-      "Used HTML, CSS/Tailwind CSS, Node.js and later React for development",
-      "Deployed projects using Cursor and AntiGravity and Learn How to use it also",
-      "Learning Github Push-Pull-Commit Projects",
+      "Using AI Create Logo, Designs, Cards, Images, etc.. as Clients Requets",
+      "Sites Create using HTML, CSS, Node js and React js for development",
+      "Deploye projects using Cursor and AntiGravity",
+      "Github Push-Pull-Commit Projects",
     ],
-    tech: ["Cursor", "AntiGravity", "Node JS", "React.JS", "Github", "HTML5", "Tailwind CSS"],
+    tech: ["AI Creativity & Develop", "HTML5", "CSS", "Node JS", "React JS", "Github"],
   },
   {
     id: 2,
@@ -64,15 +64,33 @@ const EXPERIENCES = [
 const PROJECTS = [
   {
     id: 1,
-    name: "Portfolio Website",
-    description: "This portfolio site — built with React.js, Tailwind CSS, and React Router. Designed as a learning project for React and later Node.js integration.",
-    tech: ["React.js-Vite", "Tailwind CSS", "Node.js", "Cursor"],
-    github: "#",
-    live: "#",
-    status: "In Progress",
+    name: "Studio PhotoGraphy",
+    description: "Designed and developed a professional photography portfolio website featuring a visually immersive gallery, modern UI, and responsive layout. Built to effectively showcase creative work and strengthen the studio’s online brand identity.",
+    tech: ["React.js-Vite", "Tailwind CSS", "Node.js", "Antigravity"],
+    github: "https://github.com/GohilRavirajsinh/jd-photo-studio",
+    live: "https://jd-photo-studio.vercel.app/",
+    status: "Completed",
   },
   {
     id: 2,
+    name: "Pauva House",
+    description: "Developed a modern and responsive business website for a local food brand, focused on clean design, smooth user experience, and strong visual presentation. The website helps enhance online presence and improve customer engagement through an attractive digital platform.",
+    tech: ["React.js-Vite", "Tailwind CSS", "Node.js", "Antigravity"],
+    github: "https://github.com/GohilRavirajsinh/Shivanand-pauva-house",
+    live: "https://shivanand-pauva-house.vercel.app/",
+    status: "Completed",
+  },
+  {
+    id: 3,
+    name: "Portfolio Website",
+    description: "This portfolio site — built with React.js, Tailwind CSS, and React Router. Designed as a learning project for React and later Node.js integration.",
+    tech: ["React.js-Vite", "Tailwind CSS", "Node.js", "Cursor"],
+    github: "https://github.com/GohilRavirajsinh/My_Portfolio",
+    live: "https://gohilravirajsinh.github.io/My_Portfolio/",
+    status: "Completed",
+  },
+  {
+    id: 4,
     name: "Musical System",
     description: "Full-stack Music Listening app with React frontend, Node.js backend, and MongoDB database. Features: Songs Listing, Playlists, Whislists, and Admin Panel.",
     tech: ["React.js-Vite", "Node.js", "MongoDB/Postgre SQL", "Tailwind CSS"],
@@ -82,7 +100,7 @@ const PROJECTS = [
   },
 
   {
-    id: 3,
+    id: 5,
     name: "Affiliate Site",
     description: "A Site to Buy Items. When user cliick buy button than the link is Affiliate to Open Official Site to by Item! & Earn Commision",
     tech: ["Javascript", "CSS", "HTML5", "Php", "Laravel", "VS Code"],
@@ -91,7 +109,7 @@ const PROJECTS = [
     status: "Completed",
   },
   {
-    id: 4,
+    id: 6,
     name: "Car Selling System",
     description: "ASP.NET Simple Application to Selling Car of Customer. Home, Cars, About, Contact Pages. Customer can buy car like Ecommerce Site",
     tech: ["HTML5-CSS", "Prompt AI", "ASP.Net", "Microsoft Sql Server"],
@@ -207,7 +225,7 @@ const Experience = () => {
         <div className="section-container py-0">
           <div className="flex items-center gap-3 mb-2">
             <Code2 size={24} className="text-primary" />
-            <h2 className="text-2xl font-bold text-foreground">Featured Projects</h2>
+            <h2 className="text-2xl font-bold text-foreground">Projects</h2>
           </div>
           <div className="section-underline" />
 
@@ -245,14 +263,41 @@ const Experience = () => {
                 </p>
 
                 {/* Tech tags */}
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((t) => (
                     <span key={t} className="gold-tag">{t}</span>
                   ))}
                 </div>
 
-
-
+                {/* Project Links */}
+                <div className="flex items-center gap-4 pt-4 border-t border-white/5">
+                  {project.github !== "#" && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-xs font-semibold text-muted-foreground hover:text-primary transition-all duration-300 group/link"
+                    >
+                      <div className="p-1.5 rounded-lg bg-white/5 group-hover/link:bg-primary/10 transition-colors">
+                        <Github size={14} />
+                      </div>
+                      <span>Source Code</span>
+                    </a>
+                  )}
+                  {project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-xs font-semibold text-muted-foreground hover:text-primary transition-all duration-300 group/link"
+                    >
+                      <div className="p-1.5 rounded-lg bg-white/5 group-hover/link:bg-primary/10 transition-colors">
+                        <Globe size={14} />
+                      </div>
+                      <span>Live Preview</span>
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>

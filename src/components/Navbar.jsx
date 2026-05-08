@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Code2, Download } from "lucide-react";
-import CV from "../Assets/CV.pdf";
+import Ravirajsinh_CV from "../Assets/Ravirajsinh_CV.pdf";
 
 
 const NAV_ITEMS = [
@@ -51,8 +51,10 @@ const Navbar = () => {
         </div>
 
         <a
-          href={CV}
-          download="Ravirajsinh_Gohil_CV.pdf"
+          href={Ravirajsinh_CV}
+          download="Ravirajsinh_CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:inline-flex btn-primary text-sm"
         >
           <Download size={16} />
@@ -87,11 +89,13 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          {/* Download CV button in mobile menu too */}
+          {/* Download Ravirajsinh_CV button in mobile menu too */}
           <a
-            href={CV}
-            download="Ravirajsinh_Gohil_CV.pdf"
-            className="btn-primary text-sm text-center justify-center"
+            href={Ravirajsinh_CV}
+            download="Ravirajsinh_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex btn-primary text-sm"
           >
             <Download size={16} />
             Download CV
