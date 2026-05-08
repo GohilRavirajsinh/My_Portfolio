@@ -1,23 +1,10 @@
-<<<<<<< HEAD
 import { GraduationCap, Award, Calendar, MapPin, ExternalLink, Trophy } from "lucide-react";
 
-=======
-
-
-
-import { GraduationCap, Award, Calendar, MapPin, ExternalLink, Trophy } from "lucide-react";
-
-
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
 const EDUCATION = [
   {
     id: 1,
     degree: "Master of Computer Applications",
-<<<<<<< HEAD
     institution: "G H Patel Department Of Computer Science & technology",
-=======
-    institution: "G H Patel Department Of Computer Science & technology",   
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
     location: "Vallabh Vidhyanagar, Gujarat, India",
     year: "2023 – 2025",
     grade: "CGPA: 6.6 / 10",
@@ -28,11 +15,7 @@ const EDUCATION = [
   {
     id: 2,
     degree: "Post Graduate Department of Computer Applications",
-<<<<<<< HEAD
     institution: "G H Patel Department Of Computer Science & technology",
-=======
-    institution: "G H Patel Department Of Computer Science & technology",      
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
     location: "Vallabh Vidhyanagar, Gujarat, India",
     year: "2022 – 2023",
     grade: "CGPA: 7 / 10",
@@ -43,11 +26,7 @@ const EDUCATION = [
   {
     id: 3,
     degree: "Bachoral of Commerce (BCom)",
-<<<<<<< HEAD
     institution: "Anand Commerce Collage",
-=======
-    institution: "Anand Commerce Collage",       
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
     location: "Anand, Gujart, India",
     year: "2019 – 2022",
     grade: "CGPA: 6.6 / 10",
@@ -57,10 +36,6 @@ const EDUCATION = [
   },
 ];
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
 const CERTIFICATIONS = [
   {
     id: 1,
@@ -74,44 +49,28 @@ const CERTIFICATIONS = [
     name: "BGMI Esports Tournament",
     issuer: "Sigma ESports",
     year: "2024",
-<<<<<<< HEAD
     link: "src/Assets/certificates/Sigma Esports Certificate.jpg",
-=======
-    link: "src/Assets/certificates/Sigma-Esports-Certificate.jpg",  
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
   },
   {
     id: 3,
     name: "Ethical Hacking & Cyber Security(Workshop)",
     issuer: "Cyber Security India",
     year: "2023",
-<<<<<<< HEAD
     link: "src/Assets/certificates/Ethical Hacking And Cyber Security 2023.jpg",
-=======
-    link: "src/Assets/certificates/Ethical-Hacking-2023.jpg",
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
   },
   {
     id: 4,
     name: "Digital Marketing(Workshop)",
     issuer: "Cyber Security India",
     year: "2023",
-<<<<<<< HEAD
     link: "src/Assets/certificates/Digital Marketing workshop 2023.jpg",
-=======
-    link: "src/Assets/certificates/Digital-Marketing-workshop-2023.jpg",
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
   },
   {
     id: 5,
     name: "Cyber Awareness(Workshop)",
     issuer: "Cyber Security India",
     year: "2022",
-<<<<<<< HEAD
     link: "src/Assets/certificates/Cyber Awareness.jpg",
-=======
-    link: "src/Assets/certificates/CyberAwareness.jpg",
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
   },
   {
     id: 6,
@@ -122,38 +81,17 @@ const CERTIFICATIONS = [
   },
 ];
 
-const TrophyIcon = <Trophy size={24} className="text-primary" />
-
-<<<<<<< HEAD
-const Education = () => {
-  return (
-    <div className="page-enter">
-
-=======
+const TrophyIcon = <Trophy size={24} className="text-primary" />;
 
 const Education = () => {
   return (
-    
     <div className="page-enter">
-
-      {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
       <div
         className="py-24 text-center relative overflow-hidden"
         style={{ background: "hsl(var(--surface))", borderBottom: "1px solid hsl(var(--border))" }}
       >
-<<<<<<< HEAD
         <div className="glow-orb glow-orb-gold w-80 h-80 -top-20 left-1/2 -translate-x-1/2" />
-
         <div className="relative z-10">
-=======
-        {}
-        <div className="glow-orb glow-orb-gold w-80 h-80 -top-20 left-1/2 -translate-x-1/2" />
-
-        {}
-        <div className="relative z-10">
-          {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4"
             style={{ background: "hsl(var(--primary) / 0.1)", border: "1px solid hsl(var(--primary) / 0.3)" }}
@@ -161,10 +99,6 @@ const Education = () => {
             <GraduationCap size={16} className="text-primary" />
             <span className="text-sm text-primary font-medium">Academic Journey</span>
           </div>
-<<<<<<< HEAD
-=======
-          {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
           <h1 className="section-heading text-gradient-gold">Education</h1>
           <p className="text-muted-foreground max-w-xl mx-auto">
             My academic background and the institutions that shaped my thinking.
@@ -172,49 +106,23 @@ const Education = () => {
         </div>
       </div>
 
-<<<<<<< HEAD
       <section className="section-container">
         <h2 className="text-2xl font-bold text-foreground mb-8">Academic Qualifications</h2>
 
         <div className="relative pl-8">
-
           <div className="timeline-line" />
-
-=======
-      {}
-      <section className="section-container">
-        <h2 className="text-2xl font-bold text-foreground mb-8">Academic Qualifications</h2>
-
-        {}
-        <div className="relative pl-8">
-
-          {}
-          <div className="timeline-line" />
-
-          {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
           <div className="space-y-10">
             {EDUCATION.map((edu, index) => (
               <div
                 key={edu.id}
                 className="relative flex gap-6 page-enter"
-<<<<<<< HEAD
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-=======
-                
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                 <div
                   className="timeline-dot absolute -left-[5px]"
                   style={{ top: "0.5rem" }}
                 />
-
-<<<<<<< HEAD
                 <div className="portfolio-card p-6 flex-1 ml-4">
-
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                     <div>
                       <div className="flex items-center gap-3 mb-1">
@@ -223,25 +131,6 @@ const Education = () => {
                       </div>
                       <p className="text-primary font-semibold text-sm ml-9">{edu.institution}</p>
                     </div>
-
-=======
-                {}
-                <div className="portfolio-card p-6 flex-1 ml-4">
-
-                  {}
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                    {}
-                    <div>
-                      <div className="flex items-center gap-3 mb-1">
-                        <span className="text-2xl">{edu.icon}</span>   {}
-                        <h3 className="text-lg font-bold text-foreground">{edu.degree}</h3>
-                      </div>
-                      {}
-                      <p className="text-primary font-semibold text-sm ml-9">{edu.institution}</p>
-                    </div>
-
-                    {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                     <div
                       className="flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium text-primary shrink-0"
                       style={{ background: "hsl(var(--primary) / 0.1)", border: "1px solid hsl(var(--primary) / 0.2)" }}
@@ -250,11 +139,6 @@ const Education = () => {
                       {edu.year}
                     </div>
                   </div>
-
-<<<<<<< HEAD
-=======
-                  {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                   <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
                     <span className="flex items-center gap-1">
                       <MapPin size={13} className="text-primary" />
@@ -265,73 +149,39 @@ const Education = () => {
                       {edu.grade}
                     </span>
                   </div>
-
-<<<<<<< HEAD
-=======
-                  {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     {edu.description}
                   </p>
-
-<<<<<<< HEAD
-=======
-                  {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                   <div className="flex flex-wrap gap-2">
                     {edu.highlights.map((tag) => (
                       <span key={tag} className="gold-tag">{tag}</span>
                     ))}
                   </div>
-
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
-<<<<<<< HEAD
-=======
-      {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
       <section
         className="py-16"
         style={{ background: "hsl(var(--surface))", borderTop: "1px solid hsl(var(--border))" }}
       >
         <div className="section-container py-0">
           <h2 className="text-2xl font-bold text-foreground mb-2 inline-flex items-center gap-2">
-            Certifications &amp; Archivements {TrophyIcon}
+            Certifications & Achievements {TrophyIcon}
           </h2>
-
-<<<<<<< HEAD
           <div className="section-underline" />
-
-=======
-          <div className="section-underline" />   {}
-
-          {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {CERTIFICATIONS.map((cert) => (
               <div key={cert.id} className="portfolio-card p-5 flex items-start gap-4">
-
-<<<<<<< HEAD
-=======
-                {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                 <div
                   className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
                   style={{ background: "hsl(var(--primary) / 0.15)" }}
                 >
                   <Award size={20} className="text-primary" />
                 </div>
-
-<<<<<<< HEAD
-=======
-                {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-foreground text-sm leading-tight mb-1">
                     {cert.name}
@@ -340,11 +190,6 @@ const Education = () => {
                     {cert.issuer} · {cert.year}
                   </p>
                 </div>
-
-<<<<<<< HEAD
-=======
-                {}
->>>>>>> 598802d0d123e6dacf70fae5bee070dc9f7fe7ca
                 <a
                   href={cert.link}
                   aria-label="View certificate"
@@ -352,13 +197,11 @@ const Education = () => {
                 >
                   <ExternalLink size={14} />
                 </a>
-
               </div>
             ))}
           </div>
         </div>
       </section>
-
     </div>
   );
 };
