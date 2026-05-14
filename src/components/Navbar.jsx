@@ -1,104 +1,61 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import { Menu, X, Code2, Download } from "lucide-react";
-import Ravirajsinh_CV from "../Assets/Ravirajsinh_CV.pdf";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
-  { label: "Profile", path: "/" },
-  { label: "Education", path: "/education" },
-  { label: "Experience", path: "/experience" },
-  { label: "Achievements", path: "/achievements" },
-  { label: "Contact", path: "/contact" },
+  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Projects", id: "projects" },
+  { label: "Experience", id: "experience" },
+  { label: "Contact", id: "contact" },
 ];
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeId, setActiveId] = useState("");
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+
+    // Active link via IntersectionObserver
+    const sections = NAV_ITEMS.map(n => document.getElementById(n.id)).filter(Boolean);
+    const obs = new IntersectionObserver(
+      entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) setActiveId(e.target.id);
+        });
+      },
+      { threshold: 0.3 }
+    );
+    sections.forEach(s => obs.observe(s));
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      obs.disconnect();
+    };
+  }, []);
 
   return (
-    <nav className="navbar-glass sticky top-0 z-50 w-full">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <NavLink to="/" className="flex items-center gap-2">
-          <div
-            className="w-9 h-9 rounded-lg flex items-center justify-center"
-            style={{ background: "var(--gradient-gold)" }}
-          >
-            <Code2 size={18} className="text-primary-foreground" />
-          </div>
-          <span className="text-xl font-bold text-gradient-gold">
-            Ravirajsinh Gohil
-          </span>
-        </NavLink>
-
-        <div className="hidden md:flex items-center gap-8">
-          {NAV_ITEMS.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              end={item.path === "/"}
-              className={({ isActive }) =>
-                `text-sm font-medium transition-colors duration-200 pb-1 ${
-                  isActive
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`
-              }
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className="navbar-inner">
+        <a href="#hero" className="nav-logo">RG.</a>
+        <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+          {NAV_ITEMS.map(item => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`nav-link ${activeId === item.id ? "active" : ""}`}
+              onClick={() => setMenuOpen(false)}
             >
               {item.label}
-            </NavLink>
+            </a>
           ))}
         </div>
-
-        <div className="flex items-center gap-4">
-          <a
-            href={Ravirajsinh_CV}
-            download="Ravirajsinh_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex btn-primary text-sm gap-2"
-          >
-            <Download size={16} />
-            Download CV
-          </a>
-
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-muted-foreground hover:text-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+        <button className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
-
-      {isMenuOpen && (
-        <div className="md:hidden px-6 pb-4 flex flex-col gap-4 border-t border-border mt-2 pt-4">
-          {NAV_ITEMS.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              end={item.path === "/"}
-              onClick={() => setIsMenuOpen(false)}
-              className={({ isActive }) =>
-                `text-sm font-medium transition-colors ${
-                  isActive ? "text-primary" : "text-muted-foreground"
-                }`
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
-          <a
-            href={Ravirajsinh_CV}
-            download="Ravirajsinh_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-sm text-center flex items-center justify-center gap-2"
-          >
-            <Download size={16} />
-            Download CV
-          </a>
-        </div>
-      )}
     </nav>
   );
 };
